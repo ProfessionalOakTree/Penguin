@@ -47,7 +47,9 @@
             this.ClientSize = new System.Drawing.Size(280, 280);
             this.Controls.Add(this.pictureBox);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(296, 319);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(296, 319);
             this.Name = "BaseWindow";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.BaseWindow_Load);
