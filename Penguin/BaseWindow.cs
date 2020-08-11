@@ -35,5 +35,20 @@ namespace Penguin
                 }
             }
         }
+
+        private void pictureBox_Click(object sender, EventArgs e)
+        {
+            // Open a Web Client to grab info from the Penguin API and show said said info in the app.
+            using (WebClient webClient = new WebClient())
+            {
+                using (Stream stream = webClient.OpenRead("http://www.darrelisbae.com/api/v1/penguin/images"))
+                {
+                    // Set Window Name 
+                    this.Text = webClient.ResponseHeaders["Name"].ToString();
+                    // Set Image
+                    pictureBox.Image = Image.FromStream(stream);
+                }
+            }
+        }
     }
 }
