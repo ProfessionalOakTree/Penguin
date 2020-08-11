@@ -28,36 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PictureBox = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // PictureBox
+            // pictureBox
             // 
-            this.PictureBox.Location = new System.Drawing.Point(12, 12);
-            this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Size = new System.Drawing.Size(256, 256);
-            this.PictureBox.TabIndex = 0;
-            this.PictureBox.TabStop = false;
+            this.pictureBox.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(256, 256);
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
             // 
             // BaseWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(280, 280);
-            this.Controls.Add(this.PictureBox);
+            this.Controls.Add(this.pictureBox);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BaseWindow";
             this.TopMost = true;
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+            this.Load += new System.EventHandler(this.BaseWindow_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox PictureBox;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }
 
