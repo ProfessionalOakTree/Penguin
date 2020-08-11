@@ -19,6 +19,23 @@ namespace Penguin
         public BaseWindow()
         {
             InitializeComponent();
+
+            // Grab icon from API
+            using (WebClient webClient = new WebClient())
+            {
+                using (Stream stream = webClient.OpenRead("https://www.darrelisbae.com/api/v1/penguin/icon"))
+                {
+                    // Push data stream into a memory stream array becuase Icon complains with just a datastream :/
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        stream.CopyTo(memoryStream);
+                        using (MemoryStream ms = new MemoryStream(memoryStream.ToArray()))
+                        {
+                            this.Icon = new Icon(ms);
+                        }
+                    }
+                }
+            }
         }
 
         private void BaseWindow_Load(object sender, EventArgs e)
