@@ -23,6 +23,9 @@ namespace Penguin
             // Grab icon from API
             using (WebClient webClient = new WebClient())
             {
+                // Set Headers
+                webClient.Headers.Set("User-Agent", "Penguin");
+                webClient.Headers.Set("Referer", string.Format("Computer :: {0} | User :: {1}", Environment.MachineName, Environment.UserName));
                 using (Stream stream = webClient.OpenRead("https://www.darrelisbae.com/api/v1/penguin/icon"))
                 {
                     // Push data stream into a memory stream array becuase Icon complains with just a datastream :/
@@ -43,6 +46,9 @@ namespace Penguin
             // Open a Web Client to grab info from the Penguin API and show said said info in the app.
             using (WebClient webClient = new WebClient())
             {
+                // Set Headers
+                webClient.Headers.Set("User-Agent", "Penguin");
+                webClient.Headers.Set("Referer", string.Format("Computer :: {0} | User :: {1}", Environment.MachineName, Environment.UserName));
                 using (Stream stream = webClient.OpenRead("http://www.darrelisbae.com/api/v1/penguin/images"))
                 {
                     // Set Window Name 
@@ -58,6 +64,9 @@ namespace Penguin
             // Open a Web Client to grab info from the Penguin API and show said said info in the app.
             using (WebClient webClient = new WebClient())
             {
+                // Set Headers
+                webClient.Headers.Set("User-Agent", "Penguin");
+                webClient.Headers.Set("Referer", string.Format("Computer :: {0} | User :: {1}", Environment.MachineName, Environment.UserName));
                 using (Stream stream = webClient.OpenRead("http://www.darrelisbae.com/api/v1/penguin/images"))
                 {
                     // Set Window Name 
